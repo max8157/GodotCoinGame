@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://dokhytcsyfkov"]
+
+[ext_resource type="Script" uid="uid://bh4e8vd4ie5xc" path="res://test.gd" id="1_37kl0"]
+[ext_resource type="Texture2D" uid="uid://d1xjptgw74rxe" path="res://10pHeads.png" id="2_6uqi0"]
+[ext_resource type="Texture2D" uid="uid://cpapgu1vg6by3" path="res://10pTails.png" id="3_ppyta"]
+
+[sub_resource type="Animation" id="Animation_ykrsh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HeadsTexture:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_g14j6"]
+resource_name = "coin"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="Animation" id="Animation_vbegm"]
+resource_name = "coinHeads"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../HeadsTexture:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ehkex"]
+_data = {
+&"RESET": SubResource("Animation_ykrsh"),
+&"coin": SubResource("Animation_g14j6"),
+&"coinHeads": SubResource("Animation_vbegm")
+}
+
+[sub_resource type="Animation" id="Animation_6uqi0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plusOneText:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("plusOneText:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ppyta"]
+resource_name = "Text +1"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("plusOneText:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("plusOneText:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ykrsh"]
+_data = {
+&"RESET": SubResource("Animation_6uqi0"),
+&"Text +1": SubResource("Animation_ppyta")
+}
+
+[node name="Node2D" type="Node2D" unique_id=997107042]
+script = ExtResource("1_37kl0")
+
+[node name="Button" type="Button" parent="." unique_id=805832359]
+offset_left = 128.0
+offset_top = 448.0
+offset_right = 387.0
+offset_bottom = 523.0
+theme_override_font_sizes/font_size = 32
+text = "Heads"
+
+[node name="Button3" type="Button" parent="." unique_id=5885175]
+offset_left = 387.0
+offset_top = 448.0
+offset_right = 704.0
+offset_bottom = 523.0
+theme_override_font_sizes/font_size = 32
+text = "Next round"
+
+[node name="Button2" type="Button" parent="." unique_id=531174146]
+offset_left = 704.0
+offset_top = 448.0
+offset_right = 960.0
+offset_bottom = 524.0
+theme_override_font_sizes/font_size = 32
+text = "Tails"
+
+[node name="yourChoiceText" type="RichTextLabel" parent="." unique_id=890494492]
+offset_left = 920.0
+offset_top = 144.0
+offset_right = 1083.0
+offset_bottom = 245.0
+
+[node name="coinResultText" type="RichTextLabel" parent="." unique_id=544916683]
+offset_left = 920.0
+offset_top = 37.0
+offset_right = 1083.0
+offset_bottom = 138.0
+
+[node name="ScoreText" type="RichTextLabel" parent="." unique_id=1251930113]
+offset_left = 456.0
+offset_top = 192.0
+offset_right = 627.0
+offset_bottom = 293.0
+theme_override_font_sizes/normal_font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HeadsTexture" type="TextureRect" parent="." unique_id=1222112853]
+top_level = true
+offset_left = 61.0
+offset_top = 140.0
+offset_right = 279.0
+offset_bottom = 354.80585
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_6uqi0")
+expand_mode = 5
+
+[node name="TailsTexture" type="TextureRect" parent="." unique_id=910560564]
+offset_left = 67.0
+offset_top = 134.0
+offset_right = 285.0
+offset_bottom = 352.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_ppyta")
+expand_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1488617907]
+root_node = NodePath("../TailsTexture")
+libraries/ = SubResource("AnimationLibrary_ehkex")
+
+[node name="plusOneText" type="RichTextLabel" parent="." unique_id=1389170004]
+offset_left = 512.0
+offset_top = 128.0
+offset_right = 575.99994
+offset_bottom = 191.99997
+scale = Vector2(1e-05, 1e-05)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "+1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1585744252]
+libraries/ = SubResource("AnimationLibrary_ykrsh")
+
+[node name="bestStreak" type="RichTextLabel" parent="." unique_id=1360376553]
+offset_left = 384.0
+offset_top = 576.0
+offset_right = 704.0
+offset_bottom = 624.0
+theme_override_font_sizes/normal_font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="button1Pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button2" to="." method="button2Pressed"]
