@@ -24,6 +24,7 @@ func checkStreak(streak):
 		return
 
 func startRound() -> void:
+	animation_player.stop()
 	plus_one_text.hide()
 	heads_texture.hide()
 	tails_texture.hide()

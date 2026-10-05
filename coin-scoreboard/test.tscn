@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bh4e8vd4ie5xc" path="res://test.gd" id="1_37kl0"]
 [ext_resource type="Texture2D" uid="uid://d1xjptgw74rxe" path="res://10pHeads.png" id="2_6uqi0"]
 [ext_resource type="Texture2D" uid="uid://cpapgu1vg6by3" path="res://10pTails.png" id="3_ppyta"]
+[ext_resource type="Texture2D" uid="uid://cd4lxawl6f4ct" path="res://pexels-fwstudio-164005_480x480.webp" id="4_ppyta"]
 
 [sub_resource type="Animation" id="Animation_ykrsh"]
 length = 0.001
@@ -224,6 +225,12 @@ offset_bottom = 624.0
 theme_override_font_sizes/normal_font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PexelsFwstudio164005480x480" type="Sprite2D" parent="." unique_id=529227859]
+z_index = -1
+position = Vector2(576, 324.25)
+scale = Vector2(2.4, 2.0297806)
+texture = ExtResource("4_ppyta")
 
 [connection signal="pressed" from="Button" to="." method="button1Pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
