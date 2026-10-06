@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bh4e8vd4ie5xc" path="res://test.gd" id="1_37kl0"]
 [ext_resource type="Texture2D" uid="uid://d1xjptgw74rxe" path="res://10pHeads.png" id="2_6uqi0"]
 [ext_resource type="Texture2D" uid="uid://cpapgu1vg6by3" path="res://10pTails.png" id="3_ppyta"]
-[ext_resource type="Texture2D" uid="uid://cd4lxawl6f4ct" path="res://pexels-fwstudio-164005_480x480.webp" id="4_ppyta"]
 
 [sub_resource type="Animation" id="Animation_ykrsh"]
 length = 0.001
@@ -134,26 +133,28 @@ _data = {
 script = ExtResource("1_37kl0")
 
 [node name="Button" type="Button" parent="." unique_id=805832359]
-offset_left = 128.0
-offset_top = 448.0
-offset_right = 387.0
-offset_bottom = 523.0
+offset_left = 544.0
+offset_top = 750.0
+offset_right = 803.0
+offset_bottom = 825.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 32
 text = "Heads"
 
 [node name="Button3" type="Button" parent="." unique_id=5885175]
-offset_left = 387.0
-offset_top = 448.0
-offset_right = 704.0
-offset_bottom = 523.0
+offset_left = 800.0
+offset_top = 750.0
+offset_right = 1120.0
+offset_bottom = 825.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 32
 text = "Next round"
 
 [node name="Button2" type="Button" parent="." unique_id=531174146]
-offset_left = 704.0
-offset_top = 448.0
-offset_right = 960.0
-offset_bottom = 524.0
+offset_left = 1120.0
+offset_top = 750.0
+offset_right = 1376.0
+offset_bottom = 825.0
 theme_override_font_sizes/font_size = 32
 text = "Tails"
 
@@ -170,29 +171,29 @@ offset_right = 1083.0
 offset_bottom = 138.0
 
 [node name="ScoreText" type="RichTextLabel" parent="." unique_id=1251930113]
-offset_left = 456.0
-offset_top = 192.0
-offset_right = 627.0
-offset_bottom = 293.0
+offset_left = 872.0
+offset_top = 432.0
+offset_right = 1052.0
+offset_bottom = 532.0
 theme_override_font_sizes/normal_font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HeadsTexture" type="TextureRect" parent="." unique_id=1222112853]
 top_level = true
-offset_left = 61.0
-offset_top = 140.0
-offset_right = 279.0
-offset_bottom = 354.80585
+offset_left = 232.0
+offset_top = 390.0
+offset_right = 450.0
+offset_bottom = 604.80585
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("2_6uqi0")
 expand_mode = 5
 
 [node name="TailsTexture" type="TextureRect" parent="." unique_id=910560564]
-offset_left = 67.0
-offset_top = 134.0
-offset_right = 285.0
-offset_bottom = 352.0
+offset_left = 238.0
+offset_top = 384.0
+offset_right = 456.0
+offset_bottom = 602.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("3_ppyta")
 expand_mode = 5
@@ -226,12 +227,32 @@ theme_override_font_sizes/normal_font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PexelsFwstudio164005480x480" type="Sprite2D" parent="." unique_id=529227859]
-z_index = -1
-position = Vector2(576, 324.25)
-scale = Vector2(2.4, 2.0297806)
-texture = ExtResource("4_ppyta")
+[node name="Control" type="Control" parent="." unique_id=895602569]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpinBox" type="SpinBox" parent="." unique_id=613606166]
+offset_left = 888.0
+offset_top = 576.0
+offset_right = 1032.0
+offset_bottom = 631.0
+min_value = 5.0
+step = 5.0
+value = 5.0
+alignment = 1
+
+[node name="moneyText" type="RichTextLabel" parent="." unique_id=382410559]
+offset_left = 768.0
+offset_top = 416.0
+offset_right = 1152.0
+offset_bottom = 512.0
+theme_override_font_sizes/normal_font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="button1Pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button2" to="." method="button2Pressed"]
+[connection signal="focus_exited" from="SpinBox" to="." method="_on_spin_box_focus_exited"]
